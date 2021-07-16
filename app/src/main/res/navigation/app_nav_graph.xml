@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_grap"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.network.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_signinFragment"
+            app:destination="@id/signinFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.example.network.ui.auth.signin.SigninFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_signinFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_signinFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_signinFragment_to_mainFragment2"
+            app:destination="@id/mainFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/app_nav_grap"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.network.ui.auth.signup.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/app_nav_grap"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.network.ui.auth.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main"
+        />
+
+</navigation>
